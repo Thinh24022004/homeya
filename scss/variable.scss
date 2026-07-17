@@ -1,0 +1,130 @@
+@use './abstracts/index' as *;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+:root {
+  /* ==========================================================================
+     FONT FAMILIES
+     ========================================================================== */
+  --font-heading: #{$font-1};
+  --font-body: #{$font-1};
+
+  /* ==========================================================================
+     FONT SIZES & LINE HEIGHTS (Converted to rem/unitless)
+     ========================================================================== */
+  /* Headings (DM Sans) */
+  --fs-h1: 5rem;         /* 80px */  --lh-h1: 1.1;    /* 88px */
+  --fs-h2: 3.5rem;       /* 56px */  --lh-h2: 1.214;  /* 68px */
+  --fs-h3: 2.75rem;      /* 44px */  --lh-h3: 1.181;  /* 52px */
+  --fs-h4: 2rem;         /* 32px */  --lh-h4: 1.25;   /* 40px */
+  --fs-h5: 1.5rem;       /* 24px */  --lh-h5: 1.333;  /* 32px */
+  --fs-h6: 1.25rem;      /* 20px */  --lh-h6: 1.4;    /* 28px */
+
+  /* Body & UI Elements (DM Sans) */
+  --fs-body-default: 1rem;       /* 16px */  --lh-body-default: 1.625; /* 26px */
+  --fs-body-2: 1.125rem;         /* 18px */  --lh-body-2: 1.667;       /* 30px */
+  --fs-body-1: 1.125rem;         /* 18px */  --lh-body-1: 1.667;       /* 30px */
+  --fs-title: 1.125rem;          /* 18px */  --lh-title: 1.555;        /* 28px */
+  --fs-button: 1rem;             /* 16px */  --lh-button: 1.5;         /* 24px */
+  --fs-label: 0.875rem;          /* 14px */  --lh-label: 1.428;        /* 20px */
+  --fs-caption-1: 0.875rem;      /* 14px */  --lh-caption-1: 1.571;    /* 22px */
+  --fs-caption-2: 0.75rem;       /* 12px */  --lh-caption-2: 1.667;    /* 20px */
+
+  /* ==========================================================================
+     FONT WEIGHTS
+     ========================================================================== */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* ==========================================================================
+     COLOR PALETTE
+     ========================================================================== */
+  /* Primary Colors */
+  --color-primary: #{$primary};
+  --color-primary-hover: #{$primary-hover};
+  --color-primary-light: #007bff;
+
+  /* Text Colors */
+  --color-text-primary: #{$on-surface};
+  --color-text-secondary: #{$on-variant-1};
+  --color-text-light: #{$on-primary};
+
+  /* Background Colors */
+  --color-bg-primary: #{$white};
+  --color-bg-secondary: #{$surface};
+  --color-bg-hover: #f0f0f0;
+
+  /* Border Colors */
+  --color-border: #{$outline};
+  --color-border-primary: #007bff;
+}
+/* Base Headings Style (Font DM Sans, Weight 600) */
+h1, h2, h3, h4, h5, h6,
+.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold); /* 600 */
+}
+
+h1, .heading-1 { font-size: var(--fs-h1); line-height: var(--lh-h1); }
+h2, .heading-2 { font-size: var(--fs-h2); line-height: var(--lh-h2); }
+h3, .heading-3 { font-size: var(--fs-h3); line-height: var(--lh-h3); }
+h4, .heading-4 { font-size: var(--fs-h4); line-height: var(--lh-h4); }
+h5, .heading-5 { font-size: var(--fs-h5); line-height: var(--lh-h5); }
+h6, .heading-6 { font-size: var(--fs-h6); line-height: var(--lh-h6); }
+
+/* Base Body Style (Font DM Sans, Weight 400) */
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-default);
+  line-height: var(--lh-body-default);
+  font-weight: var(--fw-regular); /* 400 */
+}
+
+.body-default {
+  font-size: var(--fs-body-default);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body-default);
+}
+
+.body-2 {
+  font-size: var(--fs-body-2);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body-2);
+}
+
+.body-1 {
+  font-size: var(--fs-body-1);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body-1);
+}
+
+.typo-title {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-medium); /* 500 */
+  line-height: var(--lh-title);
+}
+
+.typo-button {
+  font-size: var(--fs-button);
+  font-weight: var(--fw-semibold); /* 600 */
+  line-height: var(--lh-button);
+}
+
+.typo-label {
+  font-size: var(--fs-label);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-label);
+}
+
+.caption-1 {
+  font-size: var(--fs-caption-1);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-caption-1);
+}
+
+.caption-2 {
+  font-size: var(--fs-caption-2);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-caption-2);
+}
+

@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "scss:build": "sass --no-source-map scss:css",
+    "scss:watch": "sass --watch --no-source-map scss:css"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "sass": "^1.93.0"
+  }
+}

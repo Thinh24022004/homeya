@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         mobileNavigation.querySelectorAll("li.dropdown2").forEach(function (item) {
             var submenu = item.querySelector(":scope > ul");
+            var link = item.querySelector(":scope > a");
 
             if (!submenu) {
                 return;
@@ -93,6 +94,13 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleButton.addEventListener("click", function () {
                 item.classList.toggle("open");
             });
+
+            if (link) {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    item.classList.toggle("open");
+                });
+            }
         });
     }
 
