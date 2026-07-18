@@ -1014,7 +1014,8 @@ img {
   top: 50%;
   display: flex;
   align-items: center;
-  width: 300px;
+  width: auto;
+  max-width: min(300px, 22vw);
   height: 44px;
   gap: 12px;
   opacity: 1;
@@ -1041,7 +1042,8 @@ img {
 }
 
 .main-header .nav-outer {
-  width: 630px;
+  flex: 1 1 auto;
+  max-width: 630px;
   height: 26px;
   opacity: 1;
   min-width: 0;
@@ -1058,7 +1060,7 @@ img {
 .main-header .main-menu .navigation {
   display: flex;
   align-items: center;
-  width: 630px;
+  width: 100%;
   height: 26px;
   gap: clamp(4px, 1.1vw, 40px);
   margin: 0;
@@ -1253,6 +1255,31 @@ img {
 .tf-btn.primary:hover {
   background: var(--color-primary-hover);
   border-color: var(--color-primary-hover);
+}
+
+.flat-bt-top .tf-btn.primary:hover,
+.button-mobi-sell .tf-btn.primary:hover {
+  background: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+  color: var(--color-text-light) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.show > .btn-primary.dropdown-toggle {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+  color: var(--color-text-light) !important;
+}
+
+.action-card .btn.btn-primary:hover,
+.action-card .btn.btn-primary:focus,
+.action-card .btn.btn-primary:active {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+  color: var(--color-text-light) !important;
 }
 
 .mobile-button,
@@ -1603,11 +1630,12 @@ body.menu-open .mobile-nav-toggler {
     width: 100%;
   }
   .main-header .nav-outer {
-    width: 630px;
+    flex: 1 1 auto;
+    max-width: 630px;
     display: flex;
   }
   .main-header .main-menu .navigation {
-    width: 630px;
+    width: 100%;
     height: 26px;
   }
   .tf-btn {
@@ -1627,6 +1655,25 @@ body.menu-open .mobile-nav-toggler {
     justify-content: space-between;
     gap: 16px;
   }
+  .main-header .logo-box {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: clamp(140px, 34vw, 220px);
+    max-width: 100%;
+    height: auto;
+  }
+  .main-header .logo-box .logo,
+  .main-header .logo-box .logo a {
+    height: auto;
+  }
+  .main-header .logo-box .logo img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+  }
   .main-header .nav-outer,
   .header-account {
     display: none;
@@ -1643,11 +1690,8 @@ body.menu-open .mobile-nav-toggler {
   .main-header .inner-header-left {
     width: 100%;
   }
-  .main-header .logo img {
-    width: auto;
-    height: auto;
-    max-height: 48px;
-    object-fit: contain;
+  .main-header .logo-box {
+    width: clamp(128px, 42vw, 180px);
   }
   .mobile-menu .menu-box {
     padding-left: 18px;
@@ -1685,8 +1729,9 @@ body.menu-open .mobile-nav-toggler {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 600px;
-  height: 110px;
+  width: calc(100% - 32px);
+  max-width: 600px;
+  min-height: 110px;
   opacity: 1;
   padding-right: 2px;
   padding-left: 2px;
@@ -2134,6 +2179,13 @@ body.menu-open .mobile-nav-toggler {
   justify-content: center;
   background: var(--color-primary);
   color: #fff;
+}
+
+.button-subscribe:hover,
+.button-subscribe:focus,
+.button-subscribe:active {
+  background: var(--color-primary-hover) !important;
+  color: #fff !important;
 }
 
 .button-subscribe .icon {
