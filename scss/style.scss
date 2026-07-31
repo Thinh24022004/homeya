@@ -1,4 +1,5 @@
 @use './reset';
+@use './abstracts/slider';
 
 * {
 	box-sizing: border-box;
@@ -1357,6 +1358,7 @@ body.menu-open .mobile-nav-toggler {
 .menu-bottom a:hover {
 	color: #fff;
 }
+
 
 .progress-wrap {
 	position: fixed;

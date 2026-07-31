@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var desktopNavigation = document.querySelector(".main-menu .navigation");
     var progressWrap = document.querySelector(".progress-wrap");
     var progressPath = document.querySelector(".progress-wrap path");
+    var advancedToggle = document.querySelector(".filter-advanced");
+    var advancedPanel = document.querySelector(".wd-search-form");
+    var heroAdvancedToggle = document.querySelector(".hero-advanced-btn");
+    var heroAdvancedPanel = document.querySelector(".hero-advanced-panel");
 
     if (progressWrap) {
         progressWrap.setAttribute("role", "button");
@@ -101,6 +105,46 @@ document.addEventListener("DOMContentLoaded", function () {
                     item.classList.toggle("open");
                 });
             }
+        });
+    }
+
+    if (advancedToggle && advancedPanel) {
+        if (!advancedPanel.id) {
+            advancedPanel.id = "advanced-search-panel";
+        }
+
+        advancedToggle.setAttribute("role", "button");
+        advancedToggle.setAttribute("aria-controls", advancedPanel.id);
+        advancedToggle.setAttribute("aria-expanded", "false");
+        advancedPanel.setAttribute("aria-hidden", "true");
+
+        var toggleAdvancedPanel = function (event) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            var isOpen = advancedPanel.classList.toggle("is-open");
+            advancedToggle.setAttribute("aria-expanded", String(isOpen));
+            advancedPanel.setAttribute("aria-hidden", String(!isOpen));
+        };
+
+        advancedToggle.addEventListener("click", toggleAdvancedPanel);
+        advancedToggle.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                toggleAdvancedPanel(event);
+            }
+        });
+    }
+
+    if (heroAdvancedToggle && heroAdvancedPanel) {
+        heroAdvancedToggle.setAttribute("aria-expanded", "false");
+        heroAdvancedPanel.setAttribute("aria-hidden", "true");
+
+        heroAdvancedToggle.addEventListener("click", function () {
+            var isOpen = heroAdvancedPanel.classList.toggle("is-open");
+
+            heroAdvancedToggle.setAttribute("aria-expanded", String(isOpen));
+            heroAdvancedPanel.setAttribute("aria-hidden", String(!isOpen));
         });
     }
 
