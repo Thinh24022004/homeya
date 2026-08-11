@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var toggler = document.querySelector(".mobile-nav-toggler");
     var mobileMenu = document.querySelector(".mobile-menu");
-    var closeButton = document.querySelector(".mobile-menu .close-btn");
+    var closeButton = document.querySelector(".mobile-menu .close-btn") || document.querySelector(".close-btn");
     var backdrop = document.querySelector(".mobile-menu .menu-backdrop");
     var menuOuter = document.querySelector(".mobile-menu .menu-outer");
     var desktopNavigation = document.querySelector(".main-menu .navigation");
@@ -148,12 +148,28 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    document.querySelectorAll(".footer .footer-col-block").forEach(function (block) {
+        var heading = block.querySelector(".footer-heading-mobile");
+        var content = block.querySelector(".tf-collapse-content");
+
+        if (!heading || !content) {
+            return;
+        }
+
+        heading.addEventListener("click", function () {
+            var isOpen = block.classList.toggle("open");
+            content.style.display = isOpen ? "block" : "none";
+        });
+    });
+
     function openMenu() {
         if (!mobileMenu || !toggler) {
             return;
         }
 
+        document.body.classList.add("mobile-menu-visible");
         mobileMenu.classList.add("is-open");
+        toggler.classList.add("active");
         toggler.classList.add("is-active");
         document.body.classList.add("menu-open");
         toggler.setAttribute("aria-expanded", "true");
@@ -164,7 +180,9 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        document.body.classList.remove("mobile-menu-visible");
         mobileMenu.classList.remove("is-open");
+        toggler.classList.remove("active");
         toggler.classList.remove("is-active");
         document.body.classList.remove("menu-open");
         toggler.setAttribute("aria-expanded", "false");
@@ -183,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.addEventListener("keydown", function (event) {
-        if (mobileMenu && event.key === "Escape" && mobileMenu.classList.contains("is-open")) {
+        if (mobileMenu && event.key === "Escape" && document.body.classList.contains("mobile-menu-visible")) {
             closeMenu();
         }
     });

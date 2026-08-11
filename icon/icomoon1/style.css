@@ -161,3 +161,42 @@
 .icon-pinterest:before {
   content: "\ead1";
 }
+
+/* Legacy class aliases mapped to existing icomoon glyphs */
+.icon-phone2:before {
+  content: "\e920";
+}
+
+.icon-mail:before {
+  content: "\e91f";
+}
+
+.icon-mapPinLine:before {
+  content: "\e921";
+}
+
+.icon-send:before {
+  content: "\e91d";
+}
+
+.icon-close2:before {
+  content: "\e908";
+}
+
+.icon-eye:before {
+  content: "\e90a";
+}
+
+.icon-eye-off:before {
+  content: "\e90b";
+}
+
+.flaticon-cancel-1:before {
+  font-family: 'icomoon' !important;
+  content: "\e908";
+}
+
+.icon-cancel-1:before {
+  font-family: 'icomoon' !important;
+  content: "\e908";
+}
